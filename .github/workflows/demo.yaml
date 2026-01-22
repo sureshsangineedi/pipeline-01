@@ -45,10 +45,10 @@ jobs:
     - name: Install GitLeaks
       run: |
         curl -L https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz \
-          -o gitleaks.tar.gz
-          tar -xzf gitleaks.tar.gz
-          sudo mv gitleaks /usr/local/bin/
-          gitleaks version
+        -o gitleaks.tar.gz
+        tar -xzf gitleaks.tar.gz
+        sudo mv gitleaks /usr/local/bin/
+        gitleaks version
 
     - name: Gitleaks Code Scan
       run: |
