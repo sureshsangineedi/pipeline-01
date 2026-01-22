@@ -41,12 +41,14 @@ jobs:
         trivy fs . \
           --format table \
           --output fs-report.json
-
-    - name: Gitleaks Installation
+          
+    - name: Install GitLeaks
       run: |
-        curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz \
-        | tar -xz
-        sudo mv gitleaks /usr/local/bin/
+        curl -L https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz \
+          -o gitleaks.tar.gz
+          tar -xzf gitleaks.tar.gz
+          sudo mv gitleaks /usr/local/bin/
+          gitleaks version
 
     - name: Gitleaks Code Scan
       run: |
